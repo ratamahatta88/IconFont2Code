@@ -46,8 +46,10 @@ function generateFieldName(name, prefixToRemove, ctx) {
         if (name.length == 1)
             return name;
 
-        return name.replace(/_([a-z])/g, (match, p1) => p1.toUpperCase())
-                      .replace(/^./, (match) => match.toUpperCase());
+        return name
+        .replace(/[_-]([a-zA-Z])/g, (match, p1) => p1.toUpperCase()) 
+        .replace(/^[a-z]/, (match) => match.toUpperCase()); 
+
     }
 
     function autoGenerateFieldName(ctx) {
