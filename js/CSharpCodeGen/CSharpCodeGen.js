@@ -19,7 +19,8 @@ function generateCSharpClassCode({ className, fields }) {
         className = "AppIconFont";
 
     let s = '';
-    s += `\nstatic class ${className}`;
+    s += `namespace ThinkTime.Resources;\n`;
+    s += `\npublic static class ${className}`;
     s += "\n{";
     s += "\n\tpublic static string AsString(this AppIcons icon) => icon == AppIcons.None ? string.Empty : char.ConvertFromUtf32((int)icon);";
     s += "\n"; 
